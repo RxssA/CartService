@@ -1,38 +1,25 @@
 package ie.atu;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.*;
+
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+
+@Entity
+@Data
 public class CartItem {
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private  Long id;
 
     private String itemId;
     private String itemName;
     private double price;
 
-    public CartItem(String itemId, String itemName, double price) {
-        this.itemId = itemId;
-        this.itemName = itemName;
-        this.price = price;
-    }
-
-    public String getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(String itemId) {
-        this.itemId = itemId;
-    }
-
-    public String getItemName() {
-        return itemName;
-    }
-
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
 }

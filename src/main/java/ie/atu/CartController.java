@@ -13,7 +13,7 @@ public class CartController {
     private CartService cartService;
 
     @GetMapping("/{userId}")
-    public List<CartItem> getCartItems(@PathVarible String userId) {
+    public List<CartItem> getCartItems(@PathVariable String userId) {
         return cartService.getCartItems(userId);
     }
 
